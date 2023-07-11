@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Temprature convertor </title>
+</head>
+<body>
+
+    <style>
+        #h1tag{
+               text-align: center;
+               padding:20px;
+               margin: auto;
+               text-decoration: underline;
+        }
+        #div1{
+            border: 2px solid green;
+            text-align: center;
+            background-color: darkcyan;
+            width:auto;
+            height:auto; 
+            padding:100px;
+            margin:30px;
+        }
+        label{
+            font-size: 20px ;
+        }
+        .divall{
+            text-align: center;
+            display:inline-block;
+        }
+        .in{
+            font-size: 20px;
+            font-weight: 600;
+            text-align: center;
+        }
+
+    </style>
+    <h1 id="h1tag"> Temprature convertor </h1>
+    <div id="div1">
+          <div class="divall">
+            <label name="celcius">celcius</label>
+            <br>
+            <input type="number" value="0" id="cel" class="in">
+          </div>
+          <div class="divall">
+            <label name="fahr">fharanite</label>
+            <br>
+            <input type="number" value="32" id="fah" class="in" >
+          </div>
+
+    </div>
+    <script>
+         let celcius= document.getElementById("cel");
+         let far=document.getElementById("fah");
+         celcius.addEventListener("input",function(){
+              let c =this.value;
+              let fara=(c*9/5+32);
+              if(!Number.isInteger(fara))
+              {
+                fara=fara.toFixed(4)
+              }
+              far.value=fara;
+         });
+         far.addEventListener("input",function(){
+              let fara =this.value;
+              let c= (fara-32)*(5/9);
+              if(!Number.isInteger(c))
+              {
+                c=c.toFixed(4)
+              }
+               celcius.value=c;
+         });
+
+    </script>
+    
+</body>
+</html>
